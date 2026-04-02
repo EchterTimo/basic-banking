@@ -19,10 +19,7 @@ func (a Account) GetBalance() float64 {
 }
 
 func (a Account) HasSufficientBalance(amount float64) bool {
-	if a.balance >= amount {
-		return true
-	}
-	return false
+	return a.balance >= amount
 }
 
 func (a *Account) Deposit(amount float64) {
