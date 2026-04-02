@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Optional, Literal
-from uuid import UUID, uuid4
+from uuid import uuid4
 
 
 @dataclass
@@ -46,7 +46,7 @@ class Bank:
         self._accounts.append(new_account)
         return new_account
 
-    def get_account_by_id(self, account_id: UUID) -> Account | None:
+    def get_account_by_id(self, account_id: str) -> Account | None:
         for account in self._accounts:
             if account.id == account_id:
                 return account
