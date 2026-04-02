@@ -23,6 +23,8 @@ def main():
     print(acc1)
     print(acc2)
 
+    input("Press Enter to close")
+
 
 if __name__ == '__main__':
     main()

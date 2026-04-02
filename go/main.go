@@ -23,4 +23,8 @@ func main() {
 
 	fmt.Println(acc1)
 	fmt.Println(acc2)
+
+	fmt.Print("Press Enter to close")
+	fmt.Scanln()
+
 }
