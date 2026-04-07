@@ -49,19 +49,21 @@ func (a *Account) Transfer(amount float64, target *Account) bool {
 
 type Bank struct {
 	bankName string
-	accounts []Account
+	accounts []*Account
 }
 
-func NewBank(bankName string) Bank {
-	return Bank{
+func NewBank(bankName string) *Bank {
+	return &Bank{
 		bankName: bankName,
-		accounts: []Account{},
+		accounts: []*Account{},
 	}
 }
 
-func (b *Bank) CreateAccount(ownerName string) Account {
-	// todo: auto generate custom id
-	newAccount := Account{id: uuid.New().String(), ownerName: ownerName, balance: 0.0}
+func (b *Bank) CreateAccount(ownerName string) *Account {
+	newAccount := &Account{
+		id:        uuid.New().String(),
+		ownerName: ownerName,
+		balance:   0.0}
 	b.accounts = append(b.accounts, newAccount)
 	return newAccount
 }
@@ -69,7 +71,7 @@ func (b *Bank) CreateAccount(ownerName string) Account {
 func (b *Bank) GetAccountById(id string) *Account {
 	for i := range b.accounts {
 		if b.accounts[i].id == id {
-			return &b.accounts[i]
+			return b.accounts[i]
 		}
 	}
 	return nil

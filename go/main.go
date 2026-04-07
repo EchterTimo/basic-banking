@@ -19,7 +19,7 @@ func main() {
 	fmt.Println(acc2)
 	fmt.Println()
 
-	acc1.Transfer(20, &acc2)
+	acc1.Transfer(20, acc2)
 
 	fmt.Println(acc1)
 	fmt.Println(acc2)
