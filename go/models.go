@@ -3,7 +3,6 @@ package main
 import "github.com/google/uuid"
 
 // region Account
-
 type Account struct {
 	id        string
 	ownerName string
@@ -43,10 +42,7 @@ func (a *Account) Transfer(amount float64, target *Account) bool {
 	return true
 }
 
-// endregion
-
 // region Bank
-
 type Bank struct {
 	bankName string
 	accounts []*Account
@@ -76,5 +72,3 @@ func (b *Bank) GetAccountById(id string) *Account {
 	}
 	return nil
 }
-
-// endregion
